@@ -2,14 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>PHP Tutorial</title>
+    <title>QTI XML Parser</title>
   </head>
   <body>
 
       <?php
-        echo("Hello World!");
-        echo("<br>");
-        echo("<br>");
 
         $myXMLData =
           "<?xml version='1.0' encoding='UTF-8'?>
@@ -22,6 +19,7 @@
 
           $xml = simplexml_load_string($myXMLData) or die("Error: Cannot create object");
           print_r($xml);
+          
       ?>
 
   </body>
