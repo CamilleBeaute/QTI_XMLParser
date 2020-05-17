@@ -5,12 +5,13 @@
     <title>QTI XML Parser</title>
   </head>
   <body>
-    <!--pre-->
       <?php
         $filename = 'example_qti.xml';
 
         $xml = simplexml_load_file($filename) or die("Error: Cannot create object");
+        //echo('<pre>');
         //print_r($xml);
+        //echo('</pre>');
 
         //assessment array
         foreach($xml as $assessment) {
@@ -34,7 +35,7 @@
                       if($key == 'material') {
                         //print_r($value);
 
-                        //mattext
+                        //question mattext
                         foreach($value as $key=>$value) {
                           echo($value);
                           echo('<br>');
@@ -42,18 +43,76 @@
 
                       }
 
+                      $optionKeysArr = ['a', 'b', 'c', 'd'];
+                      //$optionValuesArr = [];
+                      $optionValuesText = '';
+
+                      if($key == 'response_lid') {
+                        //print_r($value);
+
+                        //render_choice
+                        foreach($value as $key=>$value) {
+                          if($key == 'render_choice') {
+                            //print_r($value);
+
+                            foreach($value as $key=>$value) {
+                              if($key == 'response_label') {
+                                //echo '<pre>';
+                                //print_r($value);
+                                //echo '</pre>';
+
+                                foreach($value as $options) {
+                                  //echo $options->mattext;
+
+                                  $optionValuesText .= $options->mattext . ",";
+                                  //$optionValuesArr[] = $options->mattext;
+
+                                }
+
+                                //echo $optionValuesText;
+
+                              }
+
+                            }
+
+                          }
+
+                        }
+
+                      }
+
                     }
 
+                    $optionValuesArr = explode(',', $optionValuesText);
+                    array_pop($optionValuesArr);
+                    //echo '<pre>';
+                    //print_r($optionValuesArr);
+                    //echo '</pre>';
+
+                    $options = array_combine($optionKeysArr, $optionValuesArr);
+                    //echo '<pre>';
+                    //print_r($options);
+                    //echo '</pre>';
+
+                    //display options
+                    foreach($options as $key=>$value) {
+                      echo $key . '. ' . $value . '<br>';
+                    }
+
+                    echo '<br>';
+
                   }
+
                 }
 
               }
+
             }
 
           }
+
         }
 
       ?>
-    <!--/pre-->
   </body>
 </html>
