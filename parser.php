@@ -42,7 +42,8 @@
                   foreach($value as $key=>$value) {
                     //echo($value);
                     //echo("\n");
-                    $questions .= "\n" . $value . "\n";
+
+                    $questions .= "\n" . html_entity_decode($value, ENT_QUOTES | ENT_HTML5) . "\n";
                   }
                   file_put_contents($testTXT, $questions, FILE_APPEND);
 
