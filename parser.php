@@ -6,9 +6,11 @@
   </head>
   <body>
 <?php
-  $filename = 'example_qti.xml';
+  $qtiXML = 'example_qti.xml';
+  $testTXT = 'test.txt';
+  file_put_contents('test.txt','');
 
-  $xml = simplexml_load_file($filename) or die("Error: Cannot create object");
+  $xml = simplexml_load_file($qtiXML) or die("Error: Cannot create object");
   //echo('<pre>');
   //print_r($xml);
   //echo('</pre>');
@@ -36,10 +38,13 @@
                   //print_r($value);
 
                   //question mattext
+                  $questions = '';
                   foreach($value as $key=>$value) {
-                    echo($value);
-                    echo("\n");
+                    //echo($value);
+                    //echo("\n");
+                    $questions .= "\n" . $value . "\n";
                   }
+                  file_put_contents($testTXT, $questions, FILE_APPEND);
 
                 }
 
@@ -95,11 +100,13 @@
               //echo '</pre>';
 
               //display options
+              $multiple_choices = '';
               foreach($options as $key=>$value) {
-                echo $key . '. ' . $value . "\n";
+                //echo $key . '. ' . $value . "\n";
+                $multiple_choices .= $key . '. ' . $value . "\n";
               }
 
-              echo "\n";
+              file_put_contents($testTXT, $multiple_choices, FILE_APPEND);
 
             }
 
@@ -114,5 +121,6 @@
   }
 
 ?>
+  <p>View <a href="test.txt">test.text</a> for printed questions and answers.</p>
   </body>
 </html>
