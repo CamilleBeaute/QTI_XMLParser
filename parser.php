@@ -51,8 +51,8 @@
                 }
 
                 $optionKeysArr = ['a', 'b', 'c', 'd'];
-                //$optionValuesArr = [];
-                $optionValuesText = '';
+                $optionValuesArr = [];
+                //$optionValuesText = '';
 
                 if($key == 'response_lid') {
                   //print_r($value);
@@ -69,14 +69,11 @@
                           //echo '</pre>';
 
                           foreach($value as $options) {
-                            //echo $options->mattext;
-
-                            $optionValuesText .= $options->mattext . ",";
-                            //$optionValuesArr[] = $options->mattext;
-
+                            //convert options object to an array
+                            $options = (array) $options;
+                            //add multiple choice values to empty array
+                            $optionValuesArr[] = $options['mattext'];
                           }
-
-                          //echo $optionValuesText;
 
                         }
 
@@ -90,21 +87,14 @@
 
               }
 
-              $optionValuesArr = explode(',', $optionValuesText);
-              array_pop($optionValuesArr);
-              //echo '<pre>';
-              //print_r($optionValuesArr);
-              //echo '</pre>';
-
               $options = array_combine($optionKeysArr, $optionValuesArr);
               //echo '<pre>';
               //print_r($options);
               //echo '</pre>';
 
-              //display options
+              //display formatted multiple choice options
               $multiple_choices = '';
               foreach($options as $key=>$value) {
-                //echo $key . '. ' . $value . "\n";
                 $multiple_choices .= $key . '. ' . $value . "\n";
               }
 
