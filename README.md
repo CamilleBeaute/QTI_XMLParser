@@ -1,6 +1,11 @@
 # QTI_XMLParser
 
-This code reads and parses XML from a file.
+This code does the following:
+* Reads QTI XML a local file
+* Converts the XML into an Object
+* Parses the Object data
+* Generates a new multidimensional associative array containing only questions & answers
+* Outputs array content into a formatted txt file
 
 ## Resources
 
