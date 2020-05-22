@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questestinterop xmlns="http://www.imsglobal.org/xsd/ims_qtiasiv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/ims_qtiasiv1p2 http://www.imsglobal.org/xsd/ims_qtiasiv1p2p1.xsd">
+  <assessment ident="5ec7eb0adcad3" title="Human Systems Test">
+    <section ident="root_section">
+      <item title="Q1" ident="5ec7eb0adcad3_100">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>question_type</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>points_possible</fieldlabel>
+              <fieldentry>1</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>assessment_question_identifierref</fieldlabel>
+              <fieldentry>5ec7eb0adcad3_101</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">Which of the following age groups is not part of the dependency load?</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="102">
+                <material>
+                  <mattext texttype="text/plain">0-4</mattext>
+                </material>
+              </response_label>
+              <response_label ident="103">
+                <material>
+                  <mattext texttype="text/plain">10-14</mattext>
+                </material>
+              </response_label>
+              <response_label ident="104">
+                <material>
+                  <mattext texttype="text/plain">15-19</mattext>
+                </material>
+              </response_label>
+              <response_label ident="105">
+                <material>
+                  <mattext texttype="text/plain">65-69</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">104</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item title="Q2" ident="5ec7eb0adcad3_106">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>question_type</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>points_possible</fieldlabel>
+              <fieldentry>1</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>assessment_question_identifierref</fieldlabel>
+              <fieldentry>5ec7eb0adcad3_107</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">Which of the following is an example of a Push factor?</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="108">
+                <material>
+                  <mattext texttype="text/plain">Better job opportunities</mattext>
+                </material>
+              </response_label>
+              <response_label ident="109">
+                <material>
+                  <mattext texttype="text/plain">War</mattext>
+                </material>
+              </response_label>
+              <response_label ident="110">
+                <material>
+                  <mattext texttype="text/plain">Lower Taxes</mattext>
+                </material>
+              </response_label>
+              <response_label ident="111">
+                <material>
+                  <mattext texttype="text/plain">Joining Family</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">109</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item title="Q3" ident="5ec7eb0adcad3_112">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>question_type</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>points_possible</fieldlabel>
+              <fieldentry>1</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>assessment_question_identifierref</fieldlabel>
+              <fieldentry>5ec7eb0adcad3_113</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">Which of the following is an example of a Pull Factor?</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="114">
+                <material>
+                  <mattext texttype="text/plain">Favorable Conditions</mattext>
+                </material>
+              </response_label>
+              <response_label ident="115">
+                <material>
+                  <mattext texttype="text/plain">Religious Persecution</mattext>
+                </material>
+              </response_label>
+              <response_label ident="116">
+                <material>
+                  <mattext texttype="text/plain">Terrorism</mattext>
+                </material>
+              </response_label>
+              <response_label ident="117">
+                <material>
+                  <mattext texttype="text/plain">Natural Disasters</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">114</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item title="Q4" ident="5ec7eb0adcad3_118">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>question_type</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>points_possible</fieldlabel>
+              <fieldentry>1</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>assessment_question_identifierref</fieldlabel>
+              <fieldentry>5ec7eb0adcad3_119</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">Which type of immigrant needs to have an ability to make a significant financial contribution to Canada&amp;apos;s economy?</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="120">
+                <material>
+                  <mattext texttype="text/plain">Skilled Worker</mattext>
+                </material>
+              </response_label>
+              <response_label ident="121">
+                <material>
+                  <mattext texttype="text/plain">Business Immigrant</mattext>
+                </material>
+              </response_label>
+              <response_label ident="122">
+                <material>
+                  <mattext texttype="text/plain">Family Immigrant</mattext>
+                </material>
+              </response_label>
+              <response_label ident="123">
+                <material>
+                  <mattext texttype="text/plain">Refugee</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">121</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item title="Q5" ident="5ec7eb0adcad3_124">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>question_type</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>points_possible</fieldlabel>
+              <fieldentry>1</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>assessment_question_identifierref</fieldlabel>
+              <fieldentry>5ec7eb0adcad3_125</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">Which type of immigrant is reunited with a close family member, who is sponsoring them in Canada?</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="126">
+                <material>
+                  <mattext texttype="text/plain">Skilled Worker</mattext>
+                </material>
+              </response_label>
+              <response_label ident="127">
+                <material>
+                  <mattext texttype="text/plain">Business Immigrant</mattext>
+                </material>
+              </response_label>
+              <response_label ident="128">
+                <material>
+                  <mattext texttype="text/plain">Family Immigrant</mattext>
+                </material>
+              </response_label>
+              <response_label ident="129">
+                <material>
+                  <mattext texttype="text/plain">Refugee</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">128</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item title="Q6" ident="5ec7eb0adcad3_130">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>question_type</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>points_possible</fieldlabel>
+              <fieldentry>1</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>assessment_question_identifierref</fieldlabel>
+              <fieldentry>5ec7eb0adcad3_131</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">Which type of immigrant fears cruel or inhumane treatment in their home country?</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="132">
+                <material>
+                  <mattext texttype="text/plain">Skilled Worker</mattext>
+                </material>
+              </response_label>
+              <response_label ident="133">
+                <material>
+                  <mattext texttype="text/plain">Business Immigrant</mattext>
+                </material>
+              </response_label>
+              <response_label ident="134">
+                <material>
+                  <mattext texttype="text/plain">Family Immigrant</mattext>
+                </material>
+              </response_label>
+              <response_label ident="135">
+                <material>
+                  <mattext texttype="text/plain">Refugee</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">135</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item title="Q7" ident="5ec7eb0adcad3_136">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>question_type</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>points_possible</fieldlabel>
+              <fieldentry>1</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>assessment_question_identifierref</fieldlabel>
+              <fieldentry>5ec7eb0adcad3_137</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">Which type of immigrant needs to receive a score of 67 points or higher on an immigration test to be able to immigrate?</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="138">
+                <material>
+                  <mattext texttype="text/plain">Skilled Worker</mattext>
+                </material>
+              </response_label>
+              <response_label ident="139">
+                <material>
+                  <mattext texttype="text/plain">Business Immigrant</mattext>
+                </material>
+              </response_label>
+              <response_label ident="140">
+                <material>
+                  <mattext texttype="text/plain">Family Immigrant</mattext>
+                </material>
+              </response_label>
+              <response_label ident="141">
+                <material>
+                  <mattext texttype="text/plain">Refugee</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">138</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item title="Q8" ident="5ec7eb0adcad3_142">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>question_type</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>points_possible</fieldlabel>
+              <fieldentry>1</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>assessment_question_identifierref</fieldlabel>
+              <fieldentry>5ec7eb0adcad3_143</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">Which type of Rural Settlement Pattern was established before the development of the railway and major roads and has long, thin lots along major waterways?</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="144">
+                <material>
+                  <mattext texttype="text/plain">Long Lots</mattext>
+                </material>
+              </response_label>
+              <response_label ident="145">
+                <material>
+                  <mattext texttype="text/plain">Concession System</mattext>
+                </material>
+              </response_label>
+              <response_label ident="146">
+                <material>
+                  <mattext texttype="text/plain">Section System</mattext>
+                </material>
+              </response_label>
+              <response_label ident="147">
+                <material>
+                  <mattext texttype="text/plain">None of the Above</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">144</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item title="Q9" ident="5ec7eb0adcad3_148">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>question_type</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>points_possible</fieldlabel>
+              <fieldentry>1</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>assessment_question_identifierref</fieldlabel>
+              <fieldentry>5ec7eb0adcad3_149</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">Which type of Rural Settlement Pattern is found in the Southern Prairies?</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="150">
+                <material>
+                  <mattext texttype="text/plain">Long Lots</mattext>
+                </material>
+              </response_label>
+              <response_label ident="151">
+                <material>
+                  <mattext texttype="text/plain">Concession System</mattext>
+                </material>
+              </response_label>
+              <response_label ident="152">
+                <material>
+                  <mattext texttype="text/plain">Section System</mattext>
+                </material>
+              </response_label>
+              <response_label ident="153">
+                <material>
+                  <mattext texttype="text/plain">None of the Above</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">152</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+      <item title="Q10" ident="5ec7eb0adcad3_154">
+        <itemmetadata>
+          <qtimetadata>
+            <qtimetadatafield>
+              <fieldlabel>question_type</fieldlabel>
+              <fieldentry>multiple_choice_question</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>points_possible</fieldlabel>
+              <fieldentry>1</fieldentry>
+            </qtimetadatafield>
+            <qtimetadatafield>
+              <fieldlabel>assessment_question_identifierref</fieldlabel>
+              <fieldentry>5ec7eb0adcad3_155</fieldentry>
+            </qtimetadatafield>
+          </qtimetadata>
+        </itemmetadata>
+        <presentation>
+          <material>
+            <mattext texttype="text/html">Which type of Rural Settlement Pattern was established long before major settlement had occurred?</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="156">
+                <material>
+                  <mattext texttype="text/plain">Long Lots</mattext>
+                </material>
+              </response_label>
+              <response_label ident="157">
+                <material>
+                  <mattext texttype="text/plain">Concession System</mattext>
+                </material>
+              </response_label>
+              <response_label ident="158">
+                <material>
+                  <mattext texttype="text/plain">Section System</mattext>
+                </material>
+              </response_label>
+              <response_label ident="159">
+                <material>
+                  <mattext texttype="text/plain">None of the Above</mattext>
+                </material>
+              </response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes>
+            <decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/>
+          </outcomes>
+          <respcondition continue="No">
+            <conditionvar>
+              <varequal respident="response1">158</varequal>
+            </conditionvar>
+            <setvar action="Set" varname="SCORE">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+    </section>
+  </assessment>
+</questestinterop>
