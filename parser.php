@@ -94,6 +94,6 @@
   }
 
 ?>
-  <p>View <a href="test.txt">test.text</a> for printed questions and answers.</p>
+  <p>View <a href="test.txt">test.txt</a> for printed questions and answers.</p>
   </body>
 </html>
