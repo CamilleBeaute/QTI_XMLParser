@@ -6,7 +6,7 @@
   </head>
   <body>
 <?php
-  $qtiXML = 'example_qti.xml';
+  $qtiXML = 'example_qti_TooFew.xml';
   $testTXT = 'test.txt';
 
   //clear file contents before adding new content
@@ -101,7 +101,15 @@
   //associate letter values with multiple choice values
   $letterOptions = [];
   foreach($optionValuesAllArr as $optionGroup) {
-    $letterOptions[] = array_combine($optionKeysArr, $optionGroup);
+    if (count($optionGroup) < 4) {
+      echo 'Please provide at least 4 multiple choice options for each question.';
+      return;
+    } elseif (count($optionGroup) > 4) {
+      echo 'Please provide no more than 4 multiple choice options for each question.';
+      return;
+    } else {
+      $letterOptions[] = array_combine($optionKeysArr, $optionGroup);
+    }
   }
 
   //echo '<pre>';
