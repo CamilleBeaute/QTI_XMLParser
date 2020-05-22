@@ -12,22 +12,16 @@
   file_put_contents('test.txt','');
 
   $xml = simplexml_load_file($qtiXML) or die("Error: Cannot create object");
-  //echo('<pre>');
-  //print_r($xml);
-  //echo('</pre>');
 
   //assessment array
   foreach($xml as $assessment) {
-    //print_r($assessment);
 
     //section array
     foreach($assessment as $section) {
-      //print_r($section);
 
       //item array
       foreach($section as $key=>$value) {
         if($key == 'item') {
-          //print_r($value);
 
           //presentation array
           foreach($value as $key=>$value) {
@@ -36,14 +30,10 @@
               //material array
               foreach ($value as $key=>$value) {
                 if($key == 'material') {
-                  //print_r($value);
 
                   //question mattext
                   $questions = '';
                   foreach($value as $key=>$value) {
-                    //echo($value);
-                    //echo("\n");
-
                     $questions .= "\n" . html_entity_decode($value, ENT_QUOTES | ENT_HTML5) . "\n";
                   }
                   file_put_contents($testTXT, $questions, FILE_APPEND);
@@ -52,21 +42,15 @@
 
                 $optionKeysArr = ['a', 'b', 'c', 'd'];
                 $optionValuesArr = [];
-                //$optionValuesText = '';
 
                 if($key == 'response_lid') {
-                  //print_r($value);
 
                   //render_choice
                   foreach($value as $key=>$value) {
                     if($key == 'render_choice') {
-                      //print_r($value);
 
                       foreach($value as $key=>$value) {
                         if($key == 'response_label') {
-                          //echo '<pre>';
-                          //print_r($value);
-                          //echo '</pre>';
 
                           foreach($value as $options) {
                             //convert options object to an array
@@ -88,9 +72,6 @@
               }
 
               $options = array_combine($optionKeysArr, $optionValuesArr);
-              //echo '<pre>';
-              //print_r($options);
-              //echo '</pre>';
 
               //display formatted multiple choice options
               $multiple_choices = '';
