@@ -6,11 +6,8 @@
   </head>
   <body>
 <?php
-  $qtiXML = 'example_qti_TooFew.xml';
+  $qtiXML = 'example_qti_HumanSystemsTest.xml';
   $testTXT = 'test.txt';
-
-  //clear file contents before adding new content
-  file_put_contents('test.txt','');
 
   //Interpret XML file into an object
   $xml = simplexml_load_file($qtiXML) or die("Error: Cannot create object");
@@ -46,7 +43,7 @@
                   foreach($value as $key=>$value) {
                     $question_text[] = html_entity_decode($value, ENT_QUOTES | ENT_HTML5);
                   }
-                  //file_put_contents($testTXT, $questions, FILE_APPEND);
+
                 }
 
                 if($key == 'response_lid') {
@@ -62,9 +59,9 @@
                         if($key == 'response_label') {
 
                           foreach($value as $options) {
-                            //convert object value to string
+                            //Convert object value to string
                             $optionStringVal = (string) $options->mattext;
-                            //add multiple choice values to empty array
+                            //Add multiple choice values to empty array
                             $optionValuesSingleArr[] = $optionStringVal;
                           }
 
@@ -74,6 +71,8 @@
 
                     }
 
+                    //Add each group of 4 multiple choice options (arrays) to 1
+                    //array containing each question's array of choices
                     $optionValuesAllArr[] = $optionValuesSingleArr;
 
                   }
@@ -94,12 +93,10 @@
 
   }
 
-  //echo '<pre>';
-  //print_r($question_text);
-  //echo '</pre>';
-
-  //associate letter values with multiple choice values
+  //Associate letter values with multiple choice values
   $letterOptions = [];
+
+  //Ensure the program only runs if each question has exactly 4 multiple choice options
   foreach($optionValuesAllArr as $optionGroup) {
     if (count($optionGroup) < 4) {
       echo 'Please provide at least 4 multiple choice options for each question.';
@@ -112,36 +109,30 @@
     }
   }
 
-  //echo '<pre>';
-  //print_r($letterOptions);
-  //echo '</pre>';
-
-
-  //Check to make sure each question has answer choices
+  //Check to make sure each question has a set of answer choices
   if(count($question_text) != count($optionValuesAllArr)) {
     echo 'The number of question and answer pairings do not match.';
     return;
   }
 
-  //$c = array_combine($question_text, $optionValuesAllArr);
-
   foreach($question_text as $key=>$value) {
 
     foreach($letterOptions as $o=>$options) {
+      //Create & set the 'question_text' key in the question array (defined at top)
+      //to the corresponding question
       $question['question_text'] = $value;
+      //Create & set the 'multiple choice' key in the question array (defined at top)
+      //to the corresponding array of options, per each each question key
       $question['multiple_choice'] = $letterOptions[$key];
 
     }
-
+    //Add the question array data formed above to the questions array
+    //(defined at top)
     $questions[] = $question;
 
   }
 
-  //echo '<pre>';
-  //print_r($questions);
-  //echo '</pre>';
-
-  //output test cpntent to txt file
+  //output test content to txt file
   $testContent = '';
   foreach($questions as $question) {
 
@@ -153,9 +144,8 @@
 
   }
 
-  file_put_contents($testTXT, $testContent, FILE_APPEND);
+  file_put_contents($testTXT, $testContent);
   //echo $testContent;
-
 
 ?>
   <p>View <a href="test.txt">test.txt</a> for printed questions and answers.</p>
