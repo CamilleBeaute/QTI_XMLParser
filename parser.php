@@ -8,6 +8,7 @@
 <?php
   $qtiXML = 'example_qti.xml';
   $testTXT = 'test.txt';
+  //clear file contents before adding new content
   file_put_contents('test.txt','');
 
   $xml = simplexml_load_file($qtiXML) or die("Error: Cannot create object");
