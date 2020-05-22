@@ -6,7 +6,7 @@
   </head>
   <body>
 <?php
-  $qtiXML = 'example_qti.xml';
+  $qtiXML = 'example_qti_HumanSystemsTest.xml';
   $testTXT = 'test.txt';
   //clear file contents before adding new content
   file_put_contents('test.txt','');
