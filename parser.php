@@ -71,6 +71,7 @@
 
               }
 
+              //associate letter values with multiple choice values
               $options = array_combine($optionKeysArr, $optionValuesArr);
 
               //display formatted multiple choice options
