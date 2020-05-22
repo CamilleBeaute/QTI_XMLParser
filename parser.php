@@ -18,8 +18,7 @@
   $question_text = [];
   $optionKeysArr = ['a', 'b', 'c', 'd'];
   $optionValuesAllArr = [];
-  $multiple_choice_options = [];
-  $correct_answer = [];
+  //$correct_answer = [];
 
   //assessment array
   foreach($xml as $assessment) {
