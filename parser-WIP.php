@@ -19,6 +19,7 @@
   $optionKeysArr = ['a', 'b', 'c', 'd'];
   $optionValuesAllArr = [];
   $correctAnswerIds = [];
+  $correctAnswerVals = [];
   $correct_answer = [];
 
   //assessment array
@@ -36,7 +37,7 @@
           foreach($value as $key=>$value) {
 
             //resprocessing array
-            //Get IDs of correct answers and puts them in an array
+            //GET IDS OF CORRECT ANSWERS AND PUT IDS IN ARRAY
             if($key == 'resprocessing') {
 
               foreach($value as $key=>$value) {
@@ -87,10 +88,6 @@
                   //render_choice
                   foreach($value as $key=>$value) {
 
-                    //echo '<pre>';
-                    //print_r($value);
-                    //echo '</pre>';
-
                     if($key == 'render_choice') {
 
                       //Declare array for collecting choices for a single question
@@ -137,6 +134,63 @@
 
   }
 
+  //COMPARE CORRECT ANSWER IDS TO IDENT VALUES &
+  //CREATE ARRAY OF CORRECT MC VALUES
+
+  //assessment array
+  foreach($xml as $assessment) {
+    //section array
+    foreach($assessment as $section) {
+      //item array
+      foreach($section as $key=>$value) {
+        if($key == 'item') {
+          //presentation array
+          foreach($value as $key=>$value) {
+            if($key == 'presentation') {
+              //material array
+              foreach ($value as $key=>$value) {
+                if($key == 'response_lid') {
+                  //render_choice
+                  foreach($value as $key=>$value) {
+                    if($key == 'render_choice') {
+                      foreach($value as $key=>$value) {
+                        //GET CORRECT ANSWER VALUES & PUT IN ARRAY
+                        //Convert response_label Object to Array
+                        $response_labelArr = (array) $value;
+
+                        //echo '<pre>';
+                        //print_r($response_labelArr);
+                        //echo '</pre>';
+
+                        $ident = $response_labelArr['@attributes']['ident'];
+                        $mattext = (string) $response_labelArr['material']->mattext;
+                        //echo $mattext;
+
+                        //Compare correct ident to all ident
+                        //in order to get correct MC value
+                        //echo '<pre>';
+                        //print_r($correctAnswerIds);
+                        //echo '</pre>';
+
+                        foreach($correctAnswerIds as $idx=>$id){
+                          if($id == $ident) {
+                            //echo 'HERE = ' . $mattext;
+                            $correctAnswerVals[] = $mattext;
+                          }
+                        }
+
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   //Associate letter values with multiple choice values
   $letterOptions = [];
 
@@ -161,6 +215,10 @@
 
   echo '<pre>';
   print_r($correctAnswerIds);
+  echo '</pre>';
+
+  echo '<pre>';
+  print_r($correctAnswerVals);
   echo '</pre>';
 
   foreach($question_text as $key=>$value) {
