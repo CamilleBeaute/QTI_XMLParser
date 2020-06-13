@@ -6,7 +6,7 @@
   </head>
   <body>
 <?php
-  $qtiXML = 'example_qti_HumanSystemsTest.xml';
+  $qtiXML = 'example_qti.xml';
   $testTXT = 'test.txt';
 
   //Interpret XML file into an object
@@ -18,7 +18,8 @@
   $question_text = [];
   $optionKeysArr = ['a', 'b', 'c', 'd'];
   $optionValuesAllArr = [];
-  //$correct_answer = [];
+  $correctAnswerIds = [];
+  $correct_answer = [];
 
   //assessment array
   foreach($xml as $assessment) {
@@ -33,6 +34,42 @@
 
           //presentation array
           foreach($value as $key=>$value) {
+
+            //resprocessing array
+            //Get IDs of correct answers and puts them in an array
+            if($key == 'resprocessing') {
+
+              foreach($value as $key=>$value) {
+
+                //respcondition array
+                if($key == 'respcondition') {
+
+                  foreach($value as $key=>$value) {
+
+                    //conditionvar array
+                    if($key == 'conditionvar') {
+
+                      //varequal values
+                      //these are the IDs of the correct answers
+                      foreach($value as $key=>$value) {
+
+                        //convert $value Object to String
+                        //before adding to array
+                        $correctAnswerIds[] = (string)$value;
+
+                      }
+
+                    }
+
+                  }
+
+                }
+
+              }
+
+            }
+
+            //Create Multiple Choice Answer array
             if($key == 'presentation') {
 
               //material array
@@ -49,12 +86,19 @@
 
                   //render_choice
                   foreach($value as $key=>$value) {
+
+                    //echo '<pre>';
+                    //print_r($value);
+                    //echo '</pre>';
+
                     if($key == 'render_choice') {
 
                       //Declare array for collecting choices for a single question
                       $optionValuesSingleArr = [];
 
                       foreach($value as $key=>$value) {
+
+                        //ADD MC OPTIONS TO ARRAY
                         if($key == 'response_label') {
 
                           foreach($value as $options) {
@@ -62,6 +106,7 @@
                             $optionStringVal = (string) $options->mattext;
                             //Add multiple choice values to empty array
                             $optionValuesSingleArr[] = $optionStringVal;
+
                           }
 
                         }
@@ -114,6 +159,10 @@
     return;
   }
 
+  echo '<pre>';
+  print_r($correctAnswerIds);
+  echo '</pre>';
+
   foreach($question_text as $key=>$value) {
 
     foreach($letterOptions as $o=>$options) {
@@ -130,6 +179,10 @@
     $questions[] = $question;
 
   }
+
+  echo '<pre>';
+  print_r($questions);
+  echo '</pre>';
 
   //output test content to txt file
   $testContent = '';
