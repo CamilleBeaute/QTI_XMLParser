@@ -178,7 +178,6 @@
                             $correctAnswerVals[] = $mattext;
                           }
                         }
-
                       }
                     }
                   }
@@ -230,8 +229,11 @@
       //Create & set the 'multiple choice' key in the question array (defined at top)
       //to the corresponding array of options, per each each question key
       $question['multiple_choice'] = $letterOptions[$key];
-
+      //Create & set the 'correct_answer_val' key in the question array (defined at top)
+      //to the corresponding question
+      $question['correct_answer_val'] = $correctAnswerVals[$key];
     }
+
     //Add the question array data formed above to the questions array
     //(defined at top)
     $questions[] = $question;
