@@ -20,7 +20,7 @@
   $optionValuesAllArr = [];
   $correctAnswerIds = [];
   $correctAnswerVals = [];
-  $correct_answer = [];
+  $answerKey = [];
 
   //assessment array
   foreach($xml as $assessment) {
@@ -212,13 +212,13 @@
     return;
   }
 
-  echo '<pre>';
-  print_r($correctAnswerIds);
-  echo '</pre>';
+  //echo '<pre>';
+  //print_r($correctAnswerIds);
+  //echo '</pre>';
 
-  echo '<pre>';
-  print_r($correctAnswerVals);
-  echo '</pre>';
+  //echo '<pre>';
+  //print_r($correctAnswerVals);
+  //echo '</pre>';
 
   foreach($question_text as $key=>$value) {
 
@@ -242,6 +242,21 @@
 
   echo '<pre>';
   print_r($questions);
+  echo '</pre>';
+
+  //GENERATE LETTER-BASED ANSWER KEY ARRAY
+  foreach($questions as $question) {
+    $answer = $question['correct_answer_val'];
+
+    foreach($question['multiple_choice'] as $key=>$value) {
+      if($answer == $value) {
+        $answerKey[] = strtoupper($key);
+      }
+    }
+  }
+
+  echo '<pre>';
+  print_r($answerKey);
   echo '</pre>';
 
   //output test content to txt file
